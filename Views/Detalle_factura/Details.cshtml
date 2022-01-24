@@ -1,0 +1,31 @@
+﻿@model AppSenaJmoc.Models.Detalle_factura
+
+@{
+    ViewData["Title"] = "Informacion Detalle Factura";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Informacion</h1>
+
+<div>
+    <h4 class="btn btn-success">Detalle Factura</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cantidad_Detalle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cantidad_Detalle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Materiales)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Materiales.Descripcion_materiales)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Id_Detalle_factura">Editar</a> |
+    <a asp-action="Index">Regresar</a>
+</div>

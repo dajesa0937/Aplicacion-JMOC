@@ -1,0 +1,40 @@
+﻿@model AppSenaJmoc.Models.Detalle_factura
+
+@{
+    ViewData["Title"] = "Editar Detalle Factura";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editar</h1>
+
+<h4 class="btn btn-success" >Detalle Factura</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id_Detalle_factura" />
+            <div class="form-group">
+                <label asp-for="Cantidad_Detalle" class="control-label"></label>
+                <input asp-for="Cantidad_Detalle" class="form-control" />
+                <span asp-validation-for="Cantidad_Detalle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id_Materiales" class="control-label"></label>
+                <select asp-for="Id_Materiales" class="form-control" asp-items="ViewBag.Id_Materiales"></select>
+                <span asp-validation-for="Id_Materiales" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regeresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<AppSenaJmoc.Models.Detalle_presupuesto>
+
+@{
+    ViewData["Title"] = "Detalle Presupuesto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detalle Presupuesto</h1>
+
+<p>
+    <a  class="btn btn-success" asp-action="Create">Crear Detalles Presupuesto</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad_detalle_Presupuesto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Materiales)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad_detalle_Presupuesto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Materiales.Descripcion_materiales)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id_detalle_Presupuesto">Editar</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id_detalle_Presupuesto">Informacion</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id_detalle_Presupuesto">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

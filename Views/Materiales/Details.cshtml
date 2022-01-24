@@ -1,0 +1,49 @@
+﻿@model AppSenaJmoc.Models.Materiales
+
+@{
+    ViewData["Title"] = "Informacion Materiales";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Informacion</h1>
+
+<div>
+    <h4 class="btn btn-success">Materiales</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre_Materiales)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre_Materiales)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descripcion_materiales)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descripcion_materiales)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Precio_Materiales)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Precio_Materiales)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Existencias_Materiales)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Existencias_Materiales)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Proveedor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Proveedor.Ciudad_Proveedor)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id_Materiales">Editar</a> |
+    <a asp-action="Index">Regresar</a>
+</div>

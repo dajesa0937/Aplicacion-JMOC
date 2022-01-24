@@ -1,0 +1,55 @@
+﻿@model AppSenaJmoc.Models.Presupuesto
+
+@{
+    ViewData["Title"] = "Informacion Presupuesto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Informacion</h1>
+
+<div>
+    <h4 class="btn btn-success" >Presupuesto</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Total_Pagar_Presupuesto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Total_Pagar_Presupuesto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Hora_Presupuesto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Hora_Presupuesto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fecha_presupuesto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fecha_presupuesto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Equipo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Equipo.Marca_Equipo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tecnico)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tecnico.Apellidos_Tecnico)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Detalle_presupuesto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Detalle_presupuesto.Id_detalle_Presupuesto)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a  class=" btn btn-primary" asp-action="Edit" asp-route-id="@Model.Id_Presupuesto">Editar</a> |
+    <a asp-action="Index">Regresar</a>
+</div>

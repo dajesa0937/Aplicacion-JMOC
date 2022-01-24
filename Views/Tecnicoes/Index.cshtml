@@ -1,0 +1,60 @@
+﻿@model IEnumerable<AppSenaJmoc.Models.Tecnico>
+
+@{
+    ViewData["Title"] = "JMOC";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Modulo Tecnico</h1>
+
+<p>
+    <a class="btn btn-success"  asp-action="Create">Crear Nuevo Tecnico</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre_Tecnico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellidos_Tecnico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono_Tecnico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email_Tecnico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ciudad_Tecnico)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre_Tecnico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellidos_Tecnico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono_Tecnico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email_Tecnico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ciudad_Tecnico)
+            </td>
+            <td>
+                <a  class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id_Tecnico">Editar</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id_Tecnico">Informacion</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id_Tecnico">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

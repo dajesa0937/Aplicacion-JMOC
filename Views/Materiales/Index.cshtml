@@ -1,0 +1,60 @@
+﻿@model IEnumerable<AppSenaJmoc.Models.Materiales>
+
+@{
+    ViewData["Title"] = "Modulo Materiales";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Modulo Materiales</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Crear Nuevo Materiales</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre_Materiales)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion_materiales)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio_Materiales)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Existencias_Materiales)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proveedor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre_Materiales)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion_materiales)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio_Materiales)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Existencias_Materiales)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proveedor.Ciudad_Proveedor)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_Materiales">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_Materiales">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_Materiales">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

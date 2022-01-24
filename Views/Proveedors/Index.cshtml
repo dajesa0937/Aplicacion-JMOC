@@ -1,0 +1,60 @@
+﻿@model IEnumerable<AppSenaJmoc.Models.Proveedor>
+
+@{
+    ViewData["Title"] = "Modulo Proveedores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Modulo Proveedores</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Crear Nuevo Proveedor</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre_Provedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion_Proveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono_Proveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email_Proveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ciudad_Proveedor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre_Provedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion_Proveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono_Proveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email_Proveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ciudad_Proveedor)
+            </td>
+            <td>
+                <a class="btn btn bg-primary" asp-action="Edit" asp-route-id="@item.Id_Proveedor">Editar</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id_Proveedor">Informacion</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id_Proveedor">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

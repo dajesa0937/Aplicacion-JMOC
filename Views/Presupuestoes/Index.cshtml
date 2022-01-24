@@ -1,0 +1,66 @@
+﻿@model IEnumerable<AppSenaJmoc.Models.Presupuesto>
+
+@{
+    ViewData["Title"] = "Modulo Presupuesto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Modulo Presupuesto</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Crear Presupuesto</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_Pagar_Presupuesto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hora_Presupuesto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_presupuesto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Equipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tecnico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Detalle_presupuesto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_Pagar_Presupuesto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hora_Presupuesto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha_presupuesto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Equipo.Marca_Equipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tecnico.Apellidos_Tecnico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Detalle_presupuesto.Id_detalle_Presupuesto)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id_Presupuesto">Editar</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id_Presupuesto">Informacion</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id_Presupuesto">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

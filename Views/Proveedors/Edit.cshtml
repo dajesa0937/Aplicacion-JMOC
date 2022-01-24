@@ -1,0 +1,55 @@
+﻿@model AppSenaJmoc.Models.Proveedor
+
+@{
+    ViewData["Title"] = "Editar Proveedor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editar</h1>
+
+<h4 class="btn btn-success">Proveedor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id_Proveedor" />
+            <div class="form-group">
+                <label asp-for="Nombre_Provedor" class="control-label"></label>
+                <input asp-for="Nombre_Provedor" class="form-control" />
+                <span asp-validation-for="Nombre_Provedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Direccion_Proveedor" class="control-label"></label>
+                <input asp-for="Direccion_Proveedor" class="form-control" />
+                <span asp-validation-for="Direccion_Proveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefono_Proveedor" class="control-label"></label>
+                <input asp-for="Telefono_Proveedor" class="form-control" />
+                <span asp-validation-for="Telefono_Proveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email_Proveedor" class="control-label"></label>
+                <input asp-for="Email_Proveedor" class="form-control" />
+                <span asp-validation-for="Email_Proveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ciudad_Proveedor" class="control-label"></label>
+                <input asp-for="Ciudad_Proveedor" class="form-control" />
+                <span asp-validation-for="Ciudad_Proveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: url("../img/imagenpresentacionheader.jpg");
+}
+
+h1 {
+    text-align: center;
+}
+
+.verde {
+    background-color: #e6952b;
+    font-size: 30px;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+.color-verde {
+    background-color: #e6952b;
+    font-size: x-large;
+    padding: 50px 50px;
+    width: 400px;
+    height: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 10%;
+    border-radius: 20px color #e6952b;
+}
+
+.forma {
+    width: 500px;
+    height: 520px;
+    background-color: #70AF85;
+    font-size: medium;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 7px 13px 37px #000;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e6952b;
+}
+
+#unico {
+    text-align: center;
+    font-size: large;
+    color: brown;
+}
+
+.letra {
+    font-size: x-large;
+    text-align: center;
+}
+
+.control {
+    width: 400px;
+    margin-bottom: 20px;
+    padding: 10px 15px 14px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.buttons {
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #080808;
+    background-color: #5b6468;
+    border-radius: 6px;
+    border: 2px solid #ec6911;
+    margin-left: 35%;
+    margin-right: 10%;
+    box-shadow: #080808
+}
+
+button:hover {
+    background-color: rgb(42, 165, 89);
+}
+
+button:active {
+    color: rgb(199, 37, 9);
+}
+
+button {
+    border-radius: 15%;
+}
+
+::placeholder {
+    color: black;
+    font-size: 80%;
+    text-align: center;
+}
